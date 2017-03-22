@@ -13,6 +13,9 @@ server.use(express.static(__dirname + '/public'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
+//Connect to the database
+mongoose.connect(mongoURI);
+
 server.get('/', function(req, res){
   res.sendFile('index.html', {root: __dirname + '/public/html'});
 });
