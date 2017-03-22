@@ -62,7 +62,7 @@ router.delete('/posts/:id', function(req, res){
         msg: err
       });
     } else {
-      res.status(201).json({
+      res.status(200).json({
         msg: 'Successfully deleted'
       });
     }
