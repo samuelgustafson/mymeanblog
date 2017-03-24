@@ -7,18 +7,15 @@
   function UserService($http){
     var base = '/users';
 
-    function login(){
-      return $http.post('/login')
-                  .then(function(response){
-                    console.log(response);
-                  });
+    function login(user){
+      return $http.post('/login', user);
     }
     function signup(user){
       return $http.post('/signup', user)
                   .then(function(response){
                     return response; // this sometimes does not work
                                     // should be available in the next
-                                    // then statement. 
+                                    // then statement.
                   });
     }
     function getAll(){
