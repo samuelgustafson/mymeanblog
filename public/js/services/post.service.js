@@ -39,7 +39,6 @@
                     console.log(response);
                   });
     }
-
     return {
       getAll: getAll,
       getOne: getOne,
