@@ -10,11 +10,17 @@ var userSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  password: {
+  salt: {
     type: String,
-    required: true
+  },
+  hash: {
+    type: String
   }
 });
+
+userSchema.methods.setPassword = function(password){}
+userSchema.methods.validPassword = function(password){}
+userSchema.methods.generateJwt = function(){}
 
 var User = mongoose.model('User', userSchema);
 module.exports = User;
